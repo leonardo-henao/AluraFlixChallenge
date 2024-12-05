@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+.nav__menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav__menu li {
+  text-transform: uppercase;
+}

@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap");
+
+:root {
+  --cl-primary: #ff5f53;
+  --cl-bg-primary: #3f3f3f;
+
+  --cl-font-dark: #ccccc9;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+}
+
+#root {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+body {
+  font-family: var(--font-montserrat);
+  font-optical-sizing: auto;
+  background-color: var(--cl-bg-primary);
+  color: var(--cl-font-dark);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+
+a {
+  color: var(--cl-font-dark);
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
