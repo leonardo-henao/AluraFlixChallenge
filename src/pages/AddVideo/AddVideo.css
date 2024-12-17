@@ -1,0 +1,44 @@
+.form__new-video {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form__new-video label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.form__new-video input[type='text'],
+.form__new-video select {
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.form__description {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/3;
+  gap: 1rem;
+}
+
+.form__description textarea {
+  max-width: 450px;
+}
+
+.form__buttons {
+  grid-column: 1/3;
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  text-transform: uppercase;
+}
+
+.form__buttons input {
+  width: 40%;
+  padding: 0.5rem;
+}

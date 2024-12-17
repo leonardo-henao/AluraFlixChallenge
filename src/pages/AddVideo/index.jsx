@@ -1,4 +1,5 @@
 import { Categories } from '../../data/Categories';
+import './AddVideo.css';
 
 const addNewVideo = (form) => {
   form.preventDefault();
@@ -37,12 +38,15 @@ const AddVideo = () => {
             <input type='text' name='video' placeholder='URL del video' />
           </div>
 
-          <div>
+          <div className='form__description'>
             <alabel htmlFor='description'>Descripción</alabel>
             <textarea name='description' placeholder='Descripción del video'></textarea>
           </div>
 
-          <input type='submit' value='Enviar' />
+          <div className='form__buttons'>
+            <input type='submit' value='Enviar' />
+            <input type='reset' value='Limpiar' />
+          </div>
         </form>
       </section>
     </main>

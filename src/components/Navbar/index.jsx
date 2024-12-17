@@ -5,7 +5,9 @@ import './nav.css'
 const index = () => {
 	return (
 		<nav>
-			<LogoBrand />
+			<Link to="/">
+				<LogoBrand />
+			</Link>
 			<ul className='nav__menu'>
 				<li>
 					<Link to="/">
