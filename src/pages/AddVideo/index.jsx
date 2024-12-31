@@ -1,19 +1,44 @@
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useEffect, useRef } from 'react';
 import { Categories } from '../../data/Categories';
+import { UseValidateForm } from '../../hooks/UseValidateForm';
+import { AddVideoService } from '../../services/Controller';
 import './AddVideo.css';
 
-const addNewVideo = (form) => {
+const addNewVideo = (form, formData) => {
   form.preventDefault();
+  AddVideoService(formData).then(console.log);
 };
 
 const AddVideo = () => {
+  const formNewVideo = useRef(null);
+
+  const { isValid, setForm, validateForm, formErrors, formData } = UseValidateForm();
+
+  useEffect(() => {
+    setForm(formNewVideo.current);
+  }, []);
+
   return (
     <main>
-      <h2>Agrega nuevo video</h2>
+      <div className='main__header'>
+        <h2>Nuevo video</h2>
+        <h3>Complete el formulario para crear una nueva tarjeta de video</h3>
+        <div className='main_header-anim'>
+          <DotLottieReact src='anims/video_anim.lottie' loop autoplay />
+        </div>
+      </div>
+
       <section>
-        <form onSubmit={addNewVideo} className='form__new-video'>
+        <form
+          ref={formNewVideo}
+          onSubmit={(x) => addNewVideo(x, formData)}
+          className='form__new-video'
+          onChange={validateForm}
+        >
           <div>
             <label htmlFor='title'>Titulo</label>
-            <input type='text' name='title' placeholder='Título' />
+            <input type='text' name='title' placeholder='Título' required />
           </div>
 
           <div>
@@ -29,25 +54,32 @@ const AddVideo = () => {
           </div>
 
           <div>
-            <label htmlFor='imagen'>Imagen</label>
-            <input type='text' name='imagen' placeholder='URl de la imagen' />
+            <label htmlFor='url_image'>Imagen</label>
+            <input type='text' name='url_image' placeholder='https://url-imagen.com' required />
           </div>
 
           <div>
-            <label htmlFor='video'>Video</label>
-            <input type='text' name='video' placeholder='URL del video' />
+            <label htmlFor='url_video'>Video</label>
+            <input type='text' name='url_video' placeholder='https://url-video.com' required />
           </div>
 
           <div className='form__description'>
-            <alabel htmlFor='description'>Descripción</alabel>
+            <label htmlFor='description'>Descripción</label>
             <textarea name='description' placeholder='Descripción del video'></textarea>
           </div>
 
           <div className='form__buttons'>
-            <input type='submit' value='Enviar' />
-            <input type='reset' value='Limpiar' />
+            <input className='button_ok' type='submit' value='Enviar' disabled={!isValid} />
+            <input className='button_cancel' type='reset' value='Limpiar' />
           </div>
         </form>
+        {formErrors.length > 0 && (
+          <ul className='list_form-errors'>
+            {formErrors.map((x, i) => (
+              <li key={i}>{x}</li>
+            ))}
+          </ul>
+        )}
       </section>
     </main>
   );
