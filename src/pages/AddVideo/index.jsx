@@ -1,5 +1,6 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { useEffect, useRef } from 'react';
+import { toast } from 'react-toastify';
 import { Categories } from '../../data/Categories';
 import { UseValidateForm } from '../../hooks/UseValidateForm';
 import { AddVideoService } from '../../services/Controller';
@@ -7,7 +8,17 @@ import './AddVideo.css';
 
 const addNewVideo = (form, formData) => {
   form.preventDefault();
-  AddVideoService(formData).then(console.log);
+
+  toast.promise(AddVideoService(formData), {
+    pending: 'Agregando video...',
+    success: {
+      render: () => {
+        form.target.reset();
+        return 'Video agregado exitosamente';
+      },
+    },
+    error: 'Error al crear el video',
+  });
 };
 
 const AddVideo = () => {

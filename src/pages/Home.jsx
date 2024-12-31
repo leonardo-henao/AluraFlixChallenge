@@ -1,28 +1,19 @@
-import { useState } from "react"
-import { useEffect } from "react"
-import { GetAllVideosService } from '../services/Controller'
+import { useEffect, useState } from 'react';
+import { GetAllVideosService } from '../services/Controller';
 
 const Home = () => {
+  const [listVideos, setListVideos] = useState([]);
 
-	const [listVideos, setListVideos] = useState([])
+  useEffect(() => {
+    const loadVideos = async () => {
+      const allVideos = await GetAllVideosService();
+      setListVideos(allVideos);
+    };
 
-	useEffect(() => {
-		const loadVideos = async () => {
-			const allVideos = await GetAllVideosService()
-			setListVideos(allVideos)
-		}
+    loadVideos();
+  }, []);
 
-		loadVideos()
+  return <div>{console.log(listVideos)}</div>;
+};
 
-	}, [])
-
-	return (
-		<div>
-			{
-				console.log(listVideos)
-			}
-		</div>
-	)
-}
-
-export default Home
+export default Home;
