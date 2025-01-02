@@ -19,6 +19,12 @@
   grid-template-rows: auto 1fr auto;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-montserrat);
   font-optical-sizing: auto;
@@ -37,6 +43,13 @@ body {
 a {
   color: var(--cl-font-dark);
   text-decoration: none;
+}
+
+pre {
+  text-wrap: wrap;
+  font-size: 1rem;
+  font-family: var(--font-montserrat);
+  opacity: 0.9;
 }
 
 footer {
