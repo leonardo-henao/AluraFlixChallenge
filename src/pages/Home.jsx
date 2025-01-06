@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
+import CardVideo from '../components/CardVideo';
 import { Categories } from '../data/Categories';
 import { GetAllVideosService } from '../services/Controller';
-import CardVideo from '../components/CardVideo';
 import './home.css';
 
 const getCategoryFromId = (id) => Categories.filter((x) => x.id == id);

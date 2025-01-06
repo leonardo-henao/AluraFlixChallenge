@@ -58,6 +58,47 @@ footer {
   padding: 2rem 0;
 }
 
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(3px);
+}
+
+.modal_body {
+  background-color: var(--cl-bg-primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-height: 80dvh;
+  overflow-y: auto;
+}
+
+.modal_body-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.modal_body-content {
+  padding: 1rem 0;
+}
+
+.modal_body-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .button_ok,
 .button_cancel {
   text-transform: uppercase;

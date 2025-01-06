@@ -45,6 +45,10 @@ main {
   font-size: 1rem;
 }
 
+.form__description textarea[data-type='modal'] {
+  max-width: 100%;
+}
+
 .form__buttons {
   grid-column: 1/3;
   display: flex;
@@ -70,5 +74,14 @@ main {
 @media (max-width: 1080px) {
   main {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .form__new-video {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }

@@ -1,7 +1,7 @@
 .card_video {
   --br-card: 0.2rem;
 
-  width: 400px;
+  min-width: 320px;
   max-width: 400px;
   margin: 0.5rem;
 
@@ -10,6 +10,16 @@
   box-shadow:
     2px 2px 2px 2px var(--cl-bg-primary),
     2px 2px 0px 2px var(--cl-card-primary);
+  cursor: pointer;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.card_video:hover {
+  transform: scale(1.005);
+  box-shadow:
+    2px 2px 2px 2px var(--cl-bg-primary),
+    3px 3px 0px 2px var(--cl-card-primary);
 }
 
 .card_video img {
@@ -32,16 +42,17 @@
 }
 
 .card_video-description {
-  cursor: pointer;
   margin: 0.5rem 0;
-}
-
-.card_video-description summary {
-  margin-bottom: 0.5rem;
 }
 
 .card_video-description pre {
   padding: 0.2rem;
+  overflow: hidden;
+
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .card_video-actions {
