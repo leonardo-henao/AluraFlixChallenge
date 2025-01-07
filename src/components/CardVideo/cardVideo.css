@@ -10,7 +10,6 @@
   box-shadow:
     2px 2px 2px 2px var(--cl-bg-primary),
     2px 2px 0px 2px var(--cl-card-primary);
-  cursor: pointer;
 
   transition: all 0.2s ease-in-out;
 }
@@ -20,6 +19,18 @@
   box-shadow:
     2px 2px 2px 2px var(--cl-bg-primary),
     3px 3px 0px 2px var(--cl-card-primary);
+}
+.card_video-button-youtube {
+  position: relative;
+}
+
+.card_video-button-youtube span {
+  --calc-position: calc(50% - 2.3rem);
+  position: absolute;
+  font-size: 3rem;
+  top: var(--calc-position);
+  left: var(--calc-position);
+  color: red;
 }
 
 .card_video img {

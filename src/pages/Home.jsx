@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import CardVideo from '../components/CardVideo';
+import ModalYoutubePlayer from '../components/ModalYoutubePlayer/Index';
 import { Categories } from '../data/Categories';
 import { GetAllVideosService } from '../services/Controller';
 import './home.css';
+import { formToJSON } from 'axios';
 
 const getCategoryFromId = (id) => Categories.filter((x) => x.id == id);
 
@@ -15,6 +17,8 @@ const Home = () => {
 
   const [lastSelection, setLastSelection] = useState();
 
+  const [showModalYoutubeLastSelection, setShowModalYoutubeLastSelection] = useState(false);
+
   const loadVideos = async () => {
     const allVideos = await GetAllVideosService();
     setListVideos(allVideos);
@@ -25,7 +29,11 @@ const Home = () => {
     loadVideos();
   }, []);
 
-  const editVideo = (id) => () => {
+  const editVideo = (form, data) => () => {
+    form.preventDefault();
+    console.log(formToJSON(form));
+    console.log(data);
+
     //setLastSelection(listVideos.find((x) => x.id == id));
   };
 
@@ -42,7 +50,6 @@ const Home = () => {
                 src={lastSelection.url_image}
                 alt={`Imagen del video ${lastSelection.title}`}
               />
-
               <img
                 className='main_header-image'
                 src={lastSelection.url_image}
@@ -58,15 +65,21 @@ const Home = () => {
               </div>
 
               <div className='main_header-actions'>
-                <a className='card_link' href={lastSelection.url_video}>
-                  Ir a ver el video
-                </a>
+                <button className='card_link' onClick={() => setShowModalYoutubeLastSelection(true)}>
+                  Ver el video
+                </button>
                 <button>Editar</button>
                 <button>Eliminar</button>
               </div>
             </>
           )}
         </div>
+        {showModalYoutubeLastSelection && (
+          <ModalYoutubePlayer
+            idVideo={lastSelection.url_video.split('=')[1]}
+            close={() => setShowModalYoutubeLastSelection(false)}
+          />
+        )}
       </main>
       <div>
         {Categories.map((category) => (

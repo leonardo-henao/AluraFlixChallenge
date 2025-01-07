@@ -17,6 +17,7 @@ const Index = ({ close, editVideo, video: { title, category, url_image, url_vide
         <span className='modal_body-title'>Editar video</span>
         <div className='modal_body-content'>
           <form
+            data-type='modal'
             ref={formNewVideo}
             onSubmit={(x) => editVideo(x, formData)}
             className='form__new-video'
@@ -63,12 +64,7 @@ const Index = ({ close, editVideo, video: { title, category, url_image, url_vide
 
             <div className='form__description'>
               <label htmlFor='description'>Descripción</label>
-              <textarea
-                data-type='modal'
-                name='description'
-                placeholder='Descripción del video'
-                defaultValue={description}
-              ></textarea>
+              <textarea name='description' placeholder='Descripción del video' defaultValue={description}></textarea>
             </div>
 
             <div className='form__buttons'>
