@@ -4,9 +4,9 @@ import './modalYoutubePlayer.css';
 
 const Index = ({ close, idVideo }) => {
   return (
-    <div className='modal'>
+    <div className='modal' aria-label='Modal de reproduccion de video'>
       <div className='modal_body'>
-        <button className='modal_body-btn-close' onClick={close}>
+        <button className='modal_body-btn-close' onClick={close} aria-label='Cerrar modal de reproduccion de video'>
           <IoCloseCircle />
         </button>
         <div className='modal_body-content'>

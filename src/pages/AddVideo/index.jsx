@@ -46,6 +46,7 @@ const AddVideo = () => {
           onSubmit={(x) => addNewVideo(x, formData)}
           className='form__new-video'
           onChange={validateForm}
+          aria-label='Formulario para agregar un nuevo video'
         >
           <div>
             <label htmlFor='title'>Titulo</label>
@@ -80,8 +81,19 @@ const AddVideo = () => {
           </div>
 
           <div className='form__buttons'>
-            <input className='button_ok' type='submit' value='Enviar' disabled={!isValid} />
-            <input className='button_cancel' type='reset' value='Limpiar' />
+            <input
+              className='button_ok'
+              type='submit'
+              value='Enviar'
+              disabled={!isValid}
+              aria-label='Boton para enviar el formulario'
+            />
+            <input
+              className='button_cancel'
+              type='reset'
+              value='Limpiar'
+              aria-label='Boton para limpiar el formulario'
+            />
           </div>
         </form>
         {formErrors.length > 0 && (

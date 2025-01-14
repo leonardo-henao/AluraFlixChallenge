@@ -15,9 +15,11 @@ const Index = ({ close, video: { id, title, category, url_image, url_video, desc
   }, []);
 
   return (
-    <div className='modal'>
-      <div className='modal_body'>
-        <span className='modal_body-title'>Editar video</span>
+    <div className='modal' aria-label='Modal de edicion de video'>
+      <div className='modal_body' aria-label='Cuerpo del modal de edicion de video'>
+        <span className='modal_body-title' aria-label='Titulo del modal de edicion de video' title='Editar video'>
+          Editar video
+        </span>
         <div className='modal_body-content'>
           <form
             data-type='modal'
@@ -29,6 +31,7 @@ const Index = ({ close, video: { id, title, category, url_image, url_video, desc
             }}
             className='form__new-video'
             onChange={validateForm}
+            aria-label='Formulario de edicion de video'
           >
             <div>
               <label htmlFor='title'>Titulo</label>
@@ -75,8 +78,20 @@ const Index = ({ close, video: { id, title, category, url_image, url_video, desc
             </div>
 
             <div className='form__buttons'>
-              <input className='button_ok' type='submit' value='Editar' disabled={!isValid} />
-              <input className='button_cancel' type='button' value='Cancelar' onClick={close} />
+              <input
+                className='button_ok'
+                type='submit'
+                value='Editar'
+                disabled={!isValid}
+                aria-label='Boton de edicion de video'
+              />
+              <input
+                className='button_cancel'
+                type='button'
+                value='Cancelar'
+                onClick={close}
+                aria-label='Boton de cancelar edicion de video'
+              />
             </div>
           </form>
         </div>

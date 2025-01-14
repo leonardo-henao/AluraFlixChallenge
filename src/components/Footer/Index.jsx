@@ -2,13 +2,15 @@ import LogoBrand from '../LogoBrand';
 
 const Index = () => {
   return (
-    <footer>
+    <footer aria-label='Pie de pagina'>
       <LogoBrand />
-      <span className='footer__author'>
+      <div className='footer__author' aria-label='Creador del proyecto'>
         Creado por
-        <a href='https://leonardohenao.com'> Leonardo Henao </a>
-        para AluraLatam + Oracle Next Education(ONE)
-      </span>
+        <a href='https://leonardohenao.com' target='_blank' aria-label='Ir a la pagina de Leonardo Henao'>
+          Leonardo Henao
+        </a>{' '}
+        para AluraLatam y Oracle Next Education(ONE)
+      </div>
     </footer>
   );
 };

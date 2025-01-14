@@ -21,13 +21,19 @@ const Index = () => {
   useEffect(() => handleLocationEffect(), [changeLocation]);
 
   return (
-    <nav>
+    <nav aria-label='Menu principal'>
       <Link to='/'>
         <LogoBrand />
       </Link>
       <ul className='nav__menu'>
         <li>
-          <Link className='nav__link' to='/' data-enabled={true} onClick={() => setChangeLocation(!changeLocation)}>
+          <Link
+            className='nav__link'
+            to='/'
+            data-enabled={true}
+            onClick={() => setChangeLocation(!changeLocation)}
+            aria-label='Ir a la pagina de inicio'
+          >
             <span className='nav__menu-icon'>
               <MdHome />
             </span>
@@ -35,7 +41,12 @@ const Index = () => {
           </Link>
         </li>
         <li>
-          <Link className='nav__link' to='/agregar-video' onClick={() => setChangeLocation(!changeLocation)}>
+          <Link
+            className='nav__link'
+            to='/agregar-video'
+            onClick={() => setChangeLocation(!changeLocation)}
+            aria-label='Ir a la pagina de agregar video'
+          >
             <span className='nav__menu-icon'>
               <IoMdAddCircle />
             </span>
