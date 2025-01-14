@@ -1,10 +1,11 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Categories } from '../../data/Categories';
-import HomeContext from '../../hooks/HomeContext';
 import { UseValidateForm } from '../../hooks/UseValidateForm';
+import HomeContext from '../../hooks/HomeContext';
+import { useContext } from 'react';
 
-const Index = ({ close, video: { id, title, category, url_image, url_video, description } }) => {
-  const { editVideo } = useContext(HomeContext);
+const Index = ({ close, editVideo, video: { title, category, url_image, url_video, description } }) => {
+  const { setVideoToEdit } = useContext(HomeContext);
 
   const formNewVideo = useRef(null);
 
@@ -23,9 +24,8 @@ const Index = ({ close, video: { id, title, category, url_image, url_video, desc
             data-type='modal'
             ref={formNewVideo}
             onSubmit={(x) => {
-              x.preventDefault();
-              editVideo({ ...formData, id: id });
-              close();
+              setVideoToEdit(formData);
+              editVideo(x, formData);
             }}
             className='form__new-video'
             onChange={validateForm}

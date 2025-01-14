@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router';
 import { ToastContainer } from 'react-toastify';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+import Footer from './components/Footer/Index';
+import Navbar from './components/Navbar/Index';
 
 function App() {
   return (

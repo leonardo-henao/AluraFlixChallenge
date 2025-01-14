@@ -54,8 +54,26 @@ pre {
 
 footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 2rem 0;
+  gap: 1rem;
+}
+
+.footer__author {
+  display: block;
+  font-size: 0.8rem;
+  padding: 1rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.footer__author a {
+  background-image: linear-gradient(to bottom, var(--cl-primary), white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .modal {
@@ -144,4 +162,10 @@ footer {
     inset -400px 0 0 0 gray,
     1px 1px 4px gray;
   transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-bottom: 5rem;
+  }
 }

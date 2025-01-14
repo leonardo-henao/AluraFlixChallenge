@@ -4,7 +4,7 @@ import ModalEditVideo from '../ModalEditVideo/Index';
 import ModalYoutubePlayer from '../ModalYoutubePlayer/Index';
 import './cardVideo.css';
 
-const Index = ({ video: { title, url_image, url_video, id, description }, video, removeVideo, updateVideo, color }) => {
+const Index = ({ video: { title, url_image, url_video, id, description }, video, removeVideo, color }) => {
   const [showModalEdit, setShowModalEdit] = useState(false);
 
   const [showModalYTPlayer, setShowModalYTPlayer] = useState(false);
@@ -25,11 +25,11 @@ const Index = ({ video: { title, url_image, url_video, id, description }, video,
           </span>
           <div className='card_video-actions'>
             <button onClick={() => setShowModalEdit(true)}>Editar</button>
-            <button onClick={removeVideo(id)}>Eliminar</button>
+            <button onClick={() => removeVideo(id)}>Eliminar</button>
           </div>
         </div>
       </div>
-      {showModalEdit && <ModalEditVideo close={() => setShowModalEdit(false)} video={video} editVideo={updateVideo} />}
+      {showModalEdit && <ModalEditVideo close={() => setShowModalEdit(false)} video={video} />}
       {showModalYTPlayer && (
         <ModalYoutubePlayer close={() => setShowModalYTPlayer(false)} idVideo={url_video.split('=')[1]} />
       )}
