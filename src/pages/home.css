@@ -61,10 +61,10 @@ button {
 .list_videos {
   display: flex;
   gap: 1rem;
-  overflow-x: scroll;
+  overflow-x: auto;
   align-items: start;
   margin-top: 1rem;
-  width: 100dvw;
+  width: 98dvw;
 
   transition: all 0.3s ease-in-out;
 }
