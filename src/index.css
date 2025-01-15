@@ -98,6 +98,7 @@ footer {
   background-color: var(--cl-bg-primary);
   padding: 1rem;
   border-radius: 0.5rem;
+  width: 95%;
   max-height: 80dvh;
   overflow-y: auto;
 }
@@ -163,6 +164,12 @@ footer {
     inset -400px 0 0 0 gray,
     1px 1px 4px gray;
   transform: scale(0.98);
+}
+
+@media (min-width: 1080px) {
+  .modal_body {
+    max-width: 800px;
+  }
 }
 
 @media (max-width: 768px) {

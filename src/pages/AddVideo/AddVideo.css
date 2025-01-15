@@ -4,6 +4,10 @@ main {
   gap: 2rem;
 }
 
+.main__header {
+  padding: 1rem;
+}
+
 .main__header h2 {
   text-transform: uppercase;
 }
@@ -31,6 +35,7 @@ main {
   padding: 0.5rem;
   border-radius: 0.2rem;
   border: none;
+  width: 100%;
 }
 
 .form__description {
@@ -45,7 +50,7 @@ main {
   font-size: 1rem;
 }
 
-.form__new-video[data-type='modal'] .form__description textarea {
+.form__new-video .form__description textarea {
   max-width: 100%;
 }
 
@@ -56,9 +61,6 @@ main {
   margin-top: 2rem;
 
   text-transform: uppercase;
-}
-
-.form__new-video[data-type='modal'] .form__buttons {
   justify-content: center;
 }
 

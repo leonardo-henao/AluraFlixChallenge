@@ -93,7 +93,7 @@ const Home = () => {
 
           {showModalYoutubeLastSelection && (
             <ModalYoutubePlayer
-              idVideo={lastSelection.url_video.split('=')[1]}
+              urlVideo={lastSelection.url_video}
               close={() => setShowModalYoutubeLastSelection(false)}
             />
           )}

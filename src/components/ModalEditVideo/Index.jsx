@@ -22,7 +22,6 @@ const Index = ({ close, video: { id, title, category, url_image, url_video, desc
         </span>
         <div className='modal_body-content'>
           <form
-            data-type='modal'
             ref={formNewVideo}
             onSubmit={(x) => {
               x.preventDefault();

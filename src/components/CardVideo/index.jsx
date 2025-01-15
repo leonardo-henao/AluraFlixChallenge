@@ -34,9 +34,7 @@ const Index = ({ video: { title, url_image, url_video, id, description }, video,
         </div>
       </div>
       {showModalEdit && <ModalEditVideo close={() => setShowModalEdit(false)} video={video} />}
-      {showModalYTPlayer && (
-        <ModalYoutubePlayer close={() => setShowModalYTPlayer(false)} idVideo={url_video.split('=')[1]} />
-      )}
+      {showModalYTPlayer && <ModalYoutubePlayer close={() => setShowModalYTPlayer(false)} urlVideo={url_video} />}
     </>
   );
 };
