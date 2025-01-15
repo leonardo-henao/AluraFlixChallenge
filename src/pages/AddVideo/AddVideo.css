@@ -17,6 +17,11 @@ main {
   font-weight: 300;
 }
 
+section {
+  width: 100%;
+  padding: 0.5rem;
+}
+
 .form__new-video {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

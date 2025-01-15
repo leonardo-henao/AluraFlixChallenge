@@ -5,7 +5,7 @@ const Index = () => {
     <footer aria-label='Pie de pagina'>
       <LogoBrand />
       <div className='footer__author' aria-label='Creador del proyecto'>
-        Creado por
+        Creado por{' '}
         <a href='https://leonardohenao.com' target='_blank' aria-label='Ir a la pagina de Leonardo Henao'>
           Leonardo Henao
         </a>{' '}
